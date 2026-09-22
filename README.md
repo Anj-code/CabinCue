@@ -4,6 +4,8 @@ A focused web application that lets faculty broadcast their real-time
 walk-in availability and current cabin location, and lets students book
 appointments when an immediate visit isn't possible.
 
+live at - https://cabincue.onrender.com
+
 ---
 
 ## 1. Project Overview
