@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log in — FacultyConnect</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="card auth-card">
+      <h2>Welcome back</h2>
+      <p class="auth-sub">Log in to FacultyConnect</p>
+
+      <div class="role-tabs">
+        <div class="role-tab active" data-role="student" id="tab-student">Student</div>
+        <div class="role-tab" data-role="faculty" id="tab-faculty">Faculty</div>
+      </div>
+
+      <div class="error-box" id="error-box"></div>
+
+      <form id="login-form">
+        <div class="field">
+          <label id="identifier-label" for="identifier">Registration Number</label>
+          <input type="text" id="identifier" placeholder="e.g. 23BCS001" required />
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Log in</button>
+      </form>
+
+      <div class="auth-footer">
+        Don't have an account? <a href="register.html">Sign up</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

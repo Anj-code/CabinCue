@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard — FacultyConnect</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="student-dashboard.html" class="brand">
+        <span class="brand-mark">FC</span>
+        FacultyConnect
+      </a>
+      <div class="nav-right">
+        <div id="notif-bell-container"></div>
+        <span class="nav-user">Hi, <strong id="nav-user-name">Student</strong></span>
+        <button class="btn btn-outline btn-sm" id="logout-btn">Log out</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container page">
+    <div class="page-header">
+      <div>
+        <h1>Find a faculty member</h1>
+        <div class="sub">Search by name to see their current availability and cabin.</div>
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search faculty by name…" />
+      <button class="btn btn-primary" id="search-btn">Search</button>
+    </div>
+
+    <div id="faculty-results" class="faculty-grid"></div>
+
+    <h2 class="section-title">📅 My Appointments</h2>
+    <div id="my-appointments"></div>
+  </div>
+
+  <!-- Appointment request modal -->
+  <div class="modal-overlay" id="appt-modal-overlay">
+    <div class="modal">
+      <h3>Request Appointment</h3>
+      <p class="text-muted" id="appt-modal-faculty-name" style="margin-top:-8px;"></p>
+
+      <form id="appt-form">
+        <div class="field">
+          <label for="appt-date">Date</label>
+          <input type="date" id="appt-date" required />
+        </div>
+        <div class="field">
+          <label for="appt-time">Time</label>
+          <input type="time" id="appt-time" required />
+        </div>
+        <div class="field">
+          <label for="appt-reason">Reason</label>
+          <textarea id="appt-reason" rows="3" placeholder="e.g. Discuss final year project" required></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="appt-cancel-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="appt-submit-btn">Send Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/student-dashboard.js"></script>
+</body>
+</html>

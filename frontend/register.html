@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up — FacultyConnect</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="auth-wrap">
+    <div class="card auth-card">
+      <h2>Create your account</h2>
+      <p class="auth-sub">Join FacultyConnect</p>
+
+      <div class="role-tabs">
+        <div class="role-tab active" data-role="student" id="tab-student">Student</div>
+        <div class="role-tab" data-role="faculty" id="tab-faculty">Faculty</div>
+      </div>
+
+      <div class="error-box" id="error-box"></div>
+
+      <!-- Student form -->
+      <form id="student-form">
+        <div class="field">
+          <label for="s-name">Full Name</label>
+          <input type="text" id="s-name" placeholder="e.g. Anjali Verma" required />
+        </div>
+        <div class="field">
+          <label for="s-reg">Registration Number</label>
+          <input type="text" id="s-reg" placeholder="e.g. 23BCS001" required />
+        </div>
+        <div class="field">
+          <label for="s-password">Password</label>
+          <input type="password" id="s-password" placeholder="At least 4 characters" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Create student account</button>
+      </form>
+
+      <!-- Faculty form -->
+      <form id="faculty-form" class="hidden">
+        <div class="field">
+          <label for="f-name">Full Name</label>
+          <input type="text" id="f-name" placeholder="e.g. Dr. Rajesh Kumar" required />
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-id">Faculty ID</label>
+            <input type="text" id="f-id" placeholder="e.g. FAC001" required />
+          </div>
+          <div class="field">
+            <label for="f-dept">Department</label>
+            <input type="text" id="f-dept" placeholder="e.g. CSE" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-building">Academic Building</label>
+            <input type="text" id="f-building" placeholder="e.g. AB-2" required />
+          </div>
+          <div class="field">
+            <label for="f-cabin">Cabin Number</label>
+            <input type="text" id="f-cabin" placeholder="e.g. 214" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-password">Password</label>
+          <input type="password" id="f-password" placeholder="At least 4 characters" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Create faculty account</button>
+      </form>
+
+      <div class="auth-footer">
+        Already have an account? <a href="login.html">Log in</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

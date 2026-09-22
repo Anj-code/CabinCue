@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faculty Dashboard — FacultyConnect</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="faculty-dashboard.html" class="brand">
+        <span class="brand-mark">FC</span>
+        FacultyConnect
+      </a>
+      <div class="nav-right">
+        <div id="notif-bell-container"></div>
+        <span class="nav-user">Hi, <strong id="nav-user-name">Faculty</strong></span>
+        <button class="btn btn-outline btn-sm" id="logout-btn">Log out</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container page">
+    <div class="page-header">
+      <div>
+        <h1 id="greeting">Good day, Faculty</h1>
+        <div class="sub" id="dept-line"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="availability-panel">
+        <div class="availability-status">
+          <div class="availability-dot" id="availability-dot"></div>
+          <div class="availability-text">
+            <div class="label off" id="availability-label">NOT AVAILABLE</div>
+            <div class="helper">Students see this the moment you change it.</div>
+          </div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="availability-toggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="location-display">
+        <div class="item">
+          <div class="k">Building</div>
+          <div class="v" id="loc-building">—</div>
+        </div>
+        <div class="item">
+          <div class="k">Cabin</div>
+          <div class="v" id="loc-cabin">—</div>
+        </div>
+        <div style="margin-left:auto;">
+          <button class="btn btn-outline btn-sm" id="edit-location-btn">Edit Location</button>
+        </div>
+      </div>
+
+      <form id="location-form" class="hidden" style="margin-top:18px;">
+        <div class="form-row">
+          <div class="field">
+            <label for="edit-building">Academic Building</label>
+            <input type="text" id="edit-building" required />
+          </div>
+          <div class="field">
+            <label for="edit-cabin">Cabin Number</label>
+            <input type="text" id="edit-cabin" required />
+          </div>
+        </div>
+        <div class="modal-actions" style="margin-top:0;">
+          <button type="button" class="btn btn-outline" id="cancel-location-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="save-location-btn">Save Changes</button>
+        </div>
+      </form>
+    </div>
+
+    <h2 class="section-title">📥 Appointment Requests</h2>
+    <div id="pending-appointments"></div>
+
+    <h2 class="section-title">📅 Upcoming Appointments</h2>
+    <div id="upcoming-appointments"></div>
+  </div>
+
+  <!-- Reschedule modal -->
+  <div class="modal-overlay" id="reschedule-modal-overlay">
+    <div class="modal">
+      <h3>Reschedule Appointment</h3>
+      <p class="text-muted" id="reschedule-student-name" style="margin-top:-8px;"></p>
+
+      <form id="reschedule-form">
+        <div class="field">
+          <label for="reschedule-date">New Date</label>
+          <input type="date" id="reschedule-date" required />
+        </div>
+        <div class="field">
+          <label for="reschedule-time">New Time</label>
+          <input type="time" id="reschedule-time" required />
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="reschedule-cancel-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="reschedule-submit-btn">Save New Time</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/faculty-dashboard.js"></script>
+</body>
+</html>
