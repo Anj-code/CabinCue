@@ -1,4 +1,4 @@
-# FacultyConnect
+# CabinCue
 
 A focused web application that lets faculty broadcast their real-time
 walk-in availability and current cabin location, and lets students book
